@@ -12,6 +12,16 @@ jobs:
       uses: actions/setup-node@v4
     - name: Install app
       run: npm install
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup node env
+        uses: actions/setup-node@v4
+      - name: Run app test
+        run: npm test
+        
+  
       
 
   
