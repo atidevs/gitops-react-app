@@ -1,0 +1,17 @@
+name: practice actions
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/Checkout@v4
+    - name: Setup node environment
+      uses: actions/setup-node@v4
+    - name: Install app
+      run: npm install
+      
+
+  
