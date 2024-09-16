@@ -11,9 +11,9 @@ jobs:
     steps:
       - name: Create issue
         run: |
-          curl --request POST \ 
-          --url https://api.github.com/repos/${{github.repository}}/issues \
-          --header 'authorization: Bearer ${{secrets.GITHUB_TOKEN}}' \
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/issues \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'content-type: application/json' \
           --data '{
             "title": "Automated issue created using github API",
