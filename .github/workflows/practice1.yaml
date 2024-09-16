@@ -13,11 +13,7 @@ jobs:
       with: 
         node-version: "lts/*"
     - name: Install app
-      run: npm install
-    - name: Setup node env
-      uses: actions/setup-node@v4
-    - name: Run app test
-      run: npm test
+      run: npm install && npm test
       
         
   
