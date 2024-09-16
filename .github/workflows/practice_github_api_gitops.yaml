@@ -14,4 +14,4 @@ jobs:
           gh issue --repo ${{ github.repository }} \
             create --title "Interact with github API" --body "Add interaction with github API to automoate issue creation upon pull request creation!"
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TKOEN }}
+          GH_TOKEN: ${{ github.token }}
