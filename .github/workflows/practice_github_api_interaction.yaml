@@ -1,0 +1,23 @@
+name: interact with Github API
+on: 
+  pull_request:
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Create issue
+        run: |
+          curl --request POST \ 
+          --url https://api.github.com/repos/${{github.repository}}/issues \
+          --header 'authorization: Bearer ${{secrets.GITHUB_TOKEN}}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "title": "Automated issue created using github API",
+            "body": "This issue was automatically created by Github Actions workflow!"
+            }'
+        env:
+          GH_TOKEN: ${{ GITHUB.TOKEN }}
