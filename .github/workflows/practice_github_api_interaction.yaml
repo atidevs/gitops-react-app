@@ -18,6 +18,7 @@ jobs:
           --data '{
             "title": "Automated issue created using github API",
             "body": "This issue was automatically created by Github Actions workflow!"
-            }'
+            }' \
+            --fail
         env:
           GH_TOKEN: ${{ GITHUB.TOKEN }}
